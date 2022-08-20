@@ -41,6 +41,7 @@ resource "aws_eks_node_group" "node-1" {
     max_size     = var.max_size
     min_size     = var.min_size
   }
+  instance_types = ["t2.micro"]
   depends_on = [
     aws_iam_role_policy_attachment.node-AmazonEKSWorkerNodePolicy,
     aws_iam_role_policy_attachment.node-AmazonEKS_CNI_Policy,
