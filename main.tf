@@ -4,6 +4,11 @@ terraform {
     aws   = ">=4.24.0"
     local = ">=2.2.3"
   }
+  backend "s3" {
+    bucket = "terraform-practice"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
 }
 
 provider "aws" {
